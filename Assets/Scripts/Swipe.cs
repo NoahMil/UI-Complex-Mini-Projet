@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class swipe : MonoBehaviour
+public class Swipe : MonoBehaviour
 {
     public Color[] colors;
     public GameObject scrollbar, imageContent;
@@ -17,6 +17,7 @@ public class swipe : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        scroll_pos = 0.5f;
         // Ensure the alpha of all colors is set to 1 (opaque) at start
         for (int i = 0; i < colors.Length; i++)
         {
