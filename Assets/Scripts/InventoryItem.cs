@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 
-public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerDownHandler, IPointerExitHandler, IPointerUpHandler
+public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [Header("UI")] public Image image;
     
@@ -37,19 +37,5 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         image.raycastTarget = true;
         transform.SetParent(parentAfterDrag);
     }
-
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        throw new System.NotImplementedException();
-    }
     
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        throw new System.NotImplementedException();
-    }
 }

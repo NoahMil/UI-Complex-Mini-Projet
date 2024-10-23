@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class InventorySlot : MonoBehaviour
+public class InventorySlot : MonoBehaviour, IDropHandler
 {
-    // Start is called before the first frame update
-    void Start()
+    public void OnDrop(PointerEventData eventData)
     {
-        
-    }
+        if (eventData.pointerDrag != null)
+        {
+            if (transform.childCount == 0)
+            {
+                RectTransform draggedItemRectTransform = eventData.pointerDrag.GetComponent<RectTransform>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+                draggedItemRectTransform.SetParent(transform);
+
+                draggedItemRectTransform.localPosition = Vector3.zero;
+            }
+        }
     }
 }

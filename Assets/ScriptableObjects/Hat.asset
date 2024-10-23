@@ -12,8 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6d29aadfce95124894fa08dc8be007a, type: 3}
   m_Name: Hat
   m_EditorClassIdentifier: 
-  tile: {fileID: 0}
-  sprite: {fileID: 0}
-  range: {x: 5, y: 4}
-  stackable: 1
-  image: {fileID: 0}
+  image: {fileID: 21300000, guid: 2928b65a09b77a74ba00d6d3ac2a1ef2, type: 3}
+  itemType: 1
