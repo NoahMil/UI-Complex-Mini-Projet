@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,7 +15,12 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     
     private IPointerExitHandler _pointerExitHandlerImplementation;
 
-    private void InitializeItem(Item newItem)
+    private void Start()
+    {
+        InitializeItem(item);
+    }
+
+    public void InitializeItem(Item newItem)
     {
         item = newItem;
         image.sprite = newItem.image;

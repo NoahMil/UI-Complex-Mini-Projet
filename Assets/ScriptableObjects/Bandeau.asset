@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6d29aadfce95124894fa08dc8be007a, type: 3}
-  m_Name: Hat
+  m_Name: Bandeau
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 2928b65a09b77a74ba00d6d3ac2a1ef2, type: 3}
+  image: {fileID: 21300000, guid: 7b1e772d3ba49454684aa0297b18317e, type: 3}
   itemType: 1
