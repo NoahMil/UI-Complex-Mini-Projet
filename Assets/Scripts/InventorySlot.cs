@@ -9,7 +9,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler
     {
         if (eventData.pointerDrag != null)
         {
-            if (transform.childCount == 0)
+            if (transform.childCount != 0)
             {
                 RectTransform draggedItemRectTransform = eventData.pointerDrag.GetComponent<RectTransform>();
 

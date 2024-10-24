@@ -17,7 +17,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     private void Start()
     {
-        InitializeItem(item);
+        throw new NotImplementedException();
     }
 
     public void InitializeItem(Item newItem)

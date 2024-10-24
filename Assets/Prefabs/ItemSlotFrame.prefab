@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4554953104425759477}
   - component: {fileID: 4055419966033403745}
   - component: {fileID: 7549924287587620837}
-  - component: {fileID: 4952547532133549224}
   m_Layer: 5
   m_Name: ItemSlotFrame
   m_TagString: Untagged
@@ -77,21 +76,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4952547532133549224
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3211900113393781964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 016758b044ef10849a90f3e5b0457132, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 360e571264b75644d81559f545b1df5a, type: 2}
-  image: {fileID: 486521384371874279}
-  parentAfterDrag: {fileID: 0}
 --- !u!1 &4347842511190704026
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,6 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 016758b044ef10849a90f3e5b0457132, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 360e571264b75644d81559f545b1df5a, type: 2}
   image: {fileID: 486521384371874279}
+  frame: {fileID: 0}
+  item: {fileID: 11400000, guid: 360e571264b75644d81559f545b1df5a, type: 2}
   parentAfterDrag: {fileID: 0}

@@ -1,6 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
+using UnityEngine.UI; 
 
 public class InventoryManager : MonoBehaviour
 {
@@ -13,6 +13,7 @@ public class InventoryManager : MonoBehaviour
         {
             InventorySlot slot = InventorySlots[i];
             InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
+
             if (itemInSlot == null)
             {
                 SpawnNewItem(item, slot);
@@ -24,6 +25,11 @@ public class InventoryManager : MonoBehaviour
     void SpawnNewItem(Item item, InventorySlot slot)
     {
         GameObject newItemGo = Instantiate(inventoryItemPrefab, slot.transform);
+        Image slotImage = slot.GetComponent<Image>();
+        if (slotImage != null)
+        {
+            slotImage.enabled = true;
+        }
         InventoryItem inventoryItem = newItemGo.GetComponent<InventoryItem>();
         inventoryItem.InitializeItem(item);
     }
