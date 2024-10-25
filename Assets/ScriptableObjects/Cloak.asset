@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6d29aadfce95124894fa08dc8be007a, type: 3}
-  m_Name: Bague
+  m_Name: Cloak
   m_EditorClassIdentifier: 
-  image: {fileID: 21300000, guid: 20383be2d263a2a41ac8de55afe5783a, type: 3}
-  itemType: 0
+  itemType: 4
+  image: {fileID: 21300000, guid: feef087a8f55d6948b4c7d1e164b42c1, type: 3}

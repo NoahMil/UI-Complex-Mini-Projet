@@ -8,13 +8,17 @@ using UnityEngine.Tilemaps;
 [CreateAssetMenu(menuName = "ScriptableObject/Item")]
 public class Item : ScriptableObject
 {
-    public Sprite image; 
     public ItemType itemType;
+    public Sprite image;
 }
 
 public enum ItemType
 {
-    Bague,
-    Chapeau,
+    Weapon,
+    Scarf,
+    Ring,
+    Headband,
+    Cloak,
+    Bracelet
 }
 
