@@ -1,38 +1,131 @@
 using UnityEngine;
+using System.Collections.Generic;
+using System.Linq;
 
 public class CharacterEquipmentManager : MonoBehaviour
 {
     private Item _weaponItem;
     private Item _scarfItem;
     private Item _ringItem;
+    private Item _headbandItem;
+    private Item _cloakItem;
+    private Item _braceletItem;
 
-    public Item GetWeaponItem()
+    public enum EquipSlot
     {
-        return _weaponItem;
+        Weapon,
+        Scarf,
+        Ring,
+        Headband,
+        Cloak,
+        Bracelet,
     }
     
-    public Item GetScarfItem()
+    [SerializeField] private GameObject pickaxePrefab;
+    [SerializeField] private GameObject scarfPrefab;
+    [SerializeField] private GameObject ringPrefab;
+    [SerializeField] private GameObject headbandPrefab;
+    [SerializeField] private GameObject cloakPrefab;
+    [SerializeField] private GameObject braceletPrefab;
+    
+    private void SetWeaponItem(Item weaponItem)
     {
-        return _scarfItem;
+        _weaponItem = weaponItem;
+        pickaxePrefab.SetActive(true);
     }
     
-    public Item GetRingItem()
+    private void SetScarfItem(Item scarfItem)
     {
-        return _ringItem;
+        _scarfItem = scarfItem;
+        if (scarfPrefab != null)
+        {
+            scarfPrefab.SetActive(true);
+        }    
     }
 
-    public void SetWeaponItem(Item weaponItem)
+    private void SetRingItem(Item ringItem)
     {
-        this._weaponItem = weaponItem;
+        _ringItem = ringItem;
+        if (ringPrefab != null)
+        {
+            ringPrefab.SetActive(true);
+        }  
     }
     
-    public void SetScarfItem(Item scarfItem)
+    private void SetHeadbandItem(Item headbandItem)
     {
-        this._scarfItem = scarfItem;
+        _headbandItem = headbandItem;
+        if (headbandPrefab != null)
+        {
+            headbandPrefab.SetActive(true);
+        }  
     }
     
-    public void SetRingItem(Item ringItem)
+    private void SetCloakItem(Item cloakItem)
     {
-        this._ringItem = ringItem;
+        _cloakItem = cloakItem;
+        if (cloakPrefab != null)
+        {
+            cloakPrefab.SetActive(true);
+        }  
     }
+    
+    private void SetBraceletItem(Item braceletItem)
+    {
+        _braceletItem = braceletItem;
+        if (braceletPrefab != null)
+        {
+            braceletPrefab.SetActive(true);
+        }  
+    }
+
+    public void TryEquipItem(EquipSlot equipSlot, Item item)
+    {
+        if (equipSlot == item.GetEquipSlot())
+        {
+            switch (equipSlot)
+            {
+                case EquipSlot.Weapon : SetWeaponItem(item); 
+                    Debug.Log("VRAI");
+                    break;
+                case EquipSlot.Scarf : SetScarfItem(item);
+                    Debug.Log("VRAI");
+                    break;
+                case EquipSlot.Ring : SetRingItem(item);
+                    Debug.Log("VRAI");
+                    break;
+                case EquipSlot.Headband : SetHeadbandItem(item);
+                    Debug.Log("VRAI");
+
+                    break;
+                case EquipSlot.Cloak : SetCloakItem(item);
+                    Debug.Log("VRAI");
+
+                    break;
+                case EquipSlot.Bracelet : SetBraceletItem(item);
+                    Debug.Log("VRAI");
+
+                    break;
+            }
+        }
+    }
+    
+    public bool TryItem(EquipSlot equipSlot, Item item)
+    {
+        if (equipSlot == item.GetEquipSlot())
+        {
+            switch (equipSlot)
+            {
+                case EquipSlot.Weapon : return true;
+                case EquipSlot.Scarf : return true;
+                case EquipSlot.Ring : return true;
+                case EquipSlot.Headband : return true;
+                case EquipSlot.Cloak : return true;
+                case EquipSlot.Bracelet : return true;
+            }
+        }
+
+        return false;
+    }
+    
 }

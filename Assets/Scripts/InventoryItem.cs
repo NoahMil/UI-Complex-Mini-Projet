@@ -9,18 +9,21 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     
     [HideInInspector] public Item item;
     [HideInInspector] public Transform parentAfterDrag;
+    private CanvasGroup _canvasGroup;
 
     public void InitializeItem(Item newItem)
     {
         item = newItem;
         image.sprite = newItem.image;
+        _canvasGroup = GetComponent<CanvasGroup>();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        image.raycastTarget = false;
+   //     image.raycastTarget = false;
+        _canvasGroup.blocksRaycasts = false;
         parentAfterDrag = transform.parent;
-        transform.SetParent(transform.root);  // Rend l’item global pendant le drag
+        transform.SetParent(transform.root); 
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -30,7 +33,9 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        image.raycastTarget = true;
+//        image.raycastTarget = true;
+        _canvasGroup.blocksRaycasts = true;
+
 
         if (transform.parent == transform.root)
         {

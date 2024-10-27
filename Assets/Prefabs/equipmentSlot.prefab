@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4582766483746046387}
   - component: {fileID: 2770883338658061101}
   m_Layer: 5
-  m_Name: InventoryItem
+  m_Name: ItemGhost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 15ad5e0cd700f864d9542476cbabe7c9, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b35cb724f1a96104a8d597f484bc7eb9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1adee6a1ab667ac4ebee77e956341cfc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -131,9 +131,9 @@ GameObject:
   - component: {fileID: 722859918617433967}
   - component: {fileID: 4303987113046932621}
   - component: {fileID: 409187739997352417}
-  - component: {fileID: 1172592698732382290}
+  - component: {fileID: 7930161384575488477}
   m_Layer: 5
-  m_Name: characterEquipmentSlot
+  m_Name: equipmentSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1172592698732382290
+--- !u!114 &7930161384575488477
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -206,6 +206,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 3842177927741494630}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 082d30fce73f5c84c9aff41726117a4c, type: 3}
+  m_Script: {fileID: 11500000, guid: 96bca7d4d7e5b4f44acaa04e8c812c96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

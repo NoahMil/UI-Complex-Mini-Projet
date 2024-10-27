@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6d29aadfce95124894fa08dc8be007a, type: 3}
   m_Name: Cloak
   m_EditorClassIdentifier: 
-  itemType: 4
+  itemType: 5
   image: {fileID: 21300000, guid: feef087a8f55d6948b4c7d1e164b42c1, type: 3}

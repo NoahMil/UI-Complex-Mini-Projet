@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class Swipe : MonoBehaviour
 {
-    public Color[] colors;
     public GameObject scrollbar, imageContent;
     private float scroll_pos = 0;
     float[] pos;
@@ -18,14 +17,8 @@ public class Swipe : MonoBehaviour
     void Start()
     {
         scroll_pos = 0.5f;
-        // Ensure the alpha of all colors is set to 1 (opaque) at start
-        for (int i = 0; i < colors.Length; i++)
-        {
-            colors[i].a = 1f;
-        }
     }
 
-    // Update is called once per frame
     void Update()
     {
         pos = new float[transform.childCount];
@@ -59,38 +52,6 @@ public class Swipe : MonoBehaviour
                 if (scroll_pos < pos[i] + (distance / 2) && scroll_pos > pos[i] - (distance / 2))
                 {
                     scrollbar.GetComponent<Scrollbar>().value = Mathf.Lerp(scrollbar.GetComponent<Scrollbar>().value, pos[i], 0.1f);
-                }
-            }
-        }
-
-        for (int i = 0; i < pos.Length; i++)
-        {
-            if (scroll_pos < pos[i] + (distance / 2) && scroll_pos > pos[i] - (distance / 2))
-            {
-                Debug.LogWarning("Current Selected Level" + i);
-
-                // Scaling of selected button (commented for now)
-                // transform.GetChild(i).localScale = Vector2.Lerp(transform.GetChild(i).localScale, new Vector2(1f, 1f), 0.1f);
-                // imageContent.transform.GetChild(i).localScale = Vector2.Lerp(imageContent.transform.GetChild(i).localScale, new Vector2(1.2f, 1.2f), 0.1f);
-                
-                // Ensure alpha of the selected color is 1 (opaque)
-                Color selectedColor = colors[1];
-                selectedColor.a = 1f;
-                imageContent.transform.GetChild(i).GetComponent<Image>().color = selectedColor;
-                
-                for (int j = 0; j < pos.Length; j++)
-                {
-                    if (j != i)
-                    {
-                        // Ensure alpha of the non-selected color is 1 (opaque)
-                        Color nonSelectedColor = colors[0];
-                        nonSelectedColor.a = 1f;
-                        imageContent.transform.GetChild(j).GetComponent<Image>().color = nonSelectedColor;
-
-                        // Scaling of non-selected buttons (commented for now)
-                        // imageContent.transform.GetChild(j).localScale = Vector2.Lerp(imageContent.transform.GetChild(j).localScale, new Vector2(0.8f, 0.8f), 0.1f);
-                        // transform.GetChild(j).localScale = Vector2.Lerp(transform.GetChild(j).localScale, new Vector2(0.8f, 0.8f), 0.1f);
-                    }
                 }
             }
         }
