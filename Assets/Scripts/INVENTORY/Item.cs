@@ -10,6 +10,9 @@ public class Item : ScriptableObject
 {
     public ItemType itemType;
     public Sprite image;
+    [Range(0, 10)] public float power;
+    public int price;
+    public bool isPurchased;
     
     public CharacterEquipmentManager.EquipSlot GetEquipSlot()
     { 

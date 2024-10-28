@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6d29aadfce95124894fa08dc8be007a, type: 3}
-  m_Name: Scarf
+  m_Name: Hammer
   m_EditorClassIdentifier: 
-  itemType: 2
-  image: {fileID: 21300000, guid: 1adee6a1ab667ac4ebee77e956341cfc, type: 3}
-  power: 5
-  price: 200
+  itemType: 1
+  image: {fileID: 21300000, guid: acf2c4d4db98bb84da33d08158585c13, type: 3}
+  power: 9
+  price: 350
   isPurchased: 0
