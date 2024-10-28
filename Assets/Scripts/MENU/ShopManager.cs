@@ -29,7 +29,7 @@ namespace MENU
 
                     if (item.isPurchased)
                     {
-                        buyableItem.SetCharacterAsPurchased();
+                        buyableItem.SetItemAsPurchased();
                     }
                     else
                     {
@@ -44,23 +44,20 @@ namespace MENU
         void OnItemPurchased (int index)
         {
             Item item = shopDataBase.GetItem(index);
-            BuyableItem uiItem = GetItemUI(index);
+            BuyableItem buyableItem = buyableItems[index];
 
             if (GameDataManager.CanSpendCoins (item.price)) {
-                //Proceed with the purchase operation
                 GameDataManager.SpendCoins (item.price);
 
-                //Update Coins UI text
                 GameSharedUI.instance.UpdateCoinsUIText ();
 
-                //Update DB's Data
                 shopDataBase.PurchaseItem (index);
+                buyableItem.SetItemAsPurchased();
                 
                 Debug.Log("BUY");
 
             } else {
-                Debug.Log("No enough coins..");
-                //No enough coins..
+                Debug.Log("Not enough coins..");
             }
         }
 

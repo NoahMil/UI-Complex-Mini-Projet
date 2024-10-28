@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -23,6 +24,11 @@ namespace SHOP
 		[SerializeField] Image itemImage;
 		[SerializeField] Outline itemOutline;
 
+		private void Start()
+		{
+			throw new NotImplementedException();
+		}
+
 		public void SetItemPosition (Vector2 pos)
 		{
 			GetComponent <RectTransform> ().anchoredPosition += pos;
@@ -37,7 +43,6 @@ namespace SHOP
 		{
 			buyableItemNameText.text = name;
 		}
-
 		
 		public void SetCharacterPower (float power)
 		{
@@ -49,7 +54,7 @@ namespace SHOP
 			buyableItemPriceText.text = price.ToString ();
 		}
 
-		public void SetCharacterAsPurchased ()
+		public void SetItemAsPurchased ()
 		{
 			buyableItemPurchaseButton.gameObject.SetActive (false);
 			itemButton.interactable = true;
