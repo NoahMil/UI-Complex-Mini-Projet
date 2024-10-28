@@ -22,6 +22,7 @@ public class CharacterEquipmentManager : MonoBehaviour
     }
     
     [SerializeField] private GameObject pickaxePrefab;
+    [SerializeField] private GameObject hammerPrefab;
     [SerializeField] private GameObject scarfPrefab;
     [SerializeField] private GameObject ringPrefab;
     [SerializeField] private GameObject headbandPrefab;
@@ -31,7 +32,16 @@ public class CharacterEquipmentManager : MonoBehaviour
     private void SetWeaponItem(Item weaponItem)
     {
         _weaponItem = weaponItem;
-        pickaxePrefab.SetActive(true);
+ 
+        if (weaponItem.itemType == ItemType.Hammer)
+        {
+            hammerPrefab.SetActive(true);
+        }
+        
+        else if (weaponItem.itemType == ItemType.PickAxe)
+        {
+            pickaxePrefab.SetActive(true);
+        }
     }
     
     private void SetScarfItem(Item scarfItem)
@@ -86,25 +96,16 @@ public class CharacterEquipmentManager : MonoBehaviour
             switch (equipSlot)
             {
                 case EquipSlot.Weapon : SetWeaponItem(item); 
-                    Debug.Log("VRAI");
                     break;
                 case EquipSlot.Scarf : SetScarfItem(item);
-                    Debug.Log("VRAI");
                     break;
                 case EquipSlot.Ring : SetRingItem(item);
-                    Debug.Log("VRAI");
                     break;
                 case EquipSlot.Headband : SetHeadbandItem(item);
-                    Debug.Log("VRAI");
-
                     break;
                 case EquipSlot.Cloak : SetCloakItem(item);
-                    Debug.Log("VRAI");
-
                     break;
                 case EquipSlot.Bracelet : SetBraceletItem(item);
-                    Debug.Log("VRAI");
-
                     break;
             }
         }

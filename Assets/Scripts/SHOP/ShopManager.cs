@@ -1,12 +1,14 @@
 using UnityEngine;
-using SHOP;
 
-namespace MENU
+namespace SHOP
 {
     public class ShopManager : MonoBehaviour
     {
         [SerializeField] ShopDataBase shopDataBase; 
         [SerializeField] BuyableItem[] buyableItems;
+        
+        [SerializeField] private InventoryManager inventoryManager;
+        [SerializeField] private Item[] itemsToPickUp;
 
         void Start()
         {
@@ -52,6 +54,7 @@ namespace MENU
                 GameSharedUI.instance.UpdateCoinsUIText ();
 
                 shopDataBase.PurchaseItem (index);
+                inventoryManager.AddItem(itemsToPickUp[index]);
                 buyableItem.SetItemAsPurchased();
                 
                 Debug.Log("BUY");
@@ -60,17 +63,6 @@ namespace MENU
                 Debug.Log("Not enough coins..");
             }
         }
-
         
-        BuyableItem GetItemUI(int index)
-        {
-            if (index >= 0 && index < buyableItems.Length)
-            {
-                return buyableItems[index];
-            }
-            Debug.LogWarning("Index hors limite dans buyableItems : " + index);
-            return null;
-        }
-
     }
 }

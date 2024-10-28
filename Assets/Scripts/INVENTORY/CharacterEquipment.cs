@@ -25,37 +25,31 @@ public class CharacterEquipment : MonoBehaviour
 
     private void WeaponSlot_OnItemDropped(object sender, CharacterEquipmentSlot.OnItemDroppedEventArgs e)
     {
-        Debug.Log("Equip Weapon: " + e.item);
         _characterEquipmentManager.TryEquipItem(CharacterEquipmentManager.EquipSlot.Weapon, e.item);
     }
     
     private void ScarfSlot_OnItemDropped(object sender, CharacterEquipmentSlot.OnItemDroppedEventArgs e)
     {
-        Debug.Log("Equip Scarf: " + e.item);
         _characterEquipmentManager.TryEquipItem(CharacterEquipmentManager.EquipSlot.Scarf, e.item);
     }
 
     private void RingSlot_OnItemDropped(object sender, CharacterEquipmentSlot.OnItemDroppedEventArgs e)
     {
-        Debug.Log("Equip Ring: " + e.item);
         _characterEquipmentManager.TryEquipItem(CharacterEquipmentManager.EquipSlot.Ring, e.item);
     }
     
     private void HeadbandSlot_OnItemDropped(object sender, CharacterEquipmentSlot.OnItemDroppedEventArgs e)
     {
-        Debug.Log("Equip Headband: " + e.item);
         _characterEquipmentManager.TryEquipItem(CharacterEquipmentManager.EquipSlot.Headband, e.item);
     }
     
     private void CloakSlot_OnItemDropped(object sender, CharacterEquipmentSlot.OnItemDroppedEventArgs e)
     {
-        Debug.Log("Equip Cloak: " + e.item);
         _characterEquipmentManager.TryEquipItem(CharacterEquipmentManager.EquipSlot.Cloak, e.item);
     }
     
     private void BraceletSlot_OnItemDropped(object sender, CharacterEquipmentSlot.OnItemDroppedEventArgs e)
     {
-        Debug.Log("Equip Bracelet: " + e.item);
         _characterEquipmentManager.TryEquipItem(CharacterEquipmentManager.EquipSlot.Bracelet, e.item);
     }
 

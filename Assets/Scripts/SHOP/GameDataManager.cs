@@ -14,7 +14,6 @@ namespace SHOP
         private static PlayerData _playerData = new PlayerData();
 
 
-
         public static int GetCoins()
         {
             return _playerData.coins;

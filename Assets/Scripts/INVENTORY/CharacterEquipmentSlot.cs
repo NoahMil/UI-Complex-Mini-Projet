@@ -15,8 +15,6 @@ public class CharacterEquipmentSlot : MonoBehaviour, IDropHandler
 
     [SerializeField] private CharacterEquipmentManager _characterEquipmentManage;
     
-    
-
     public void OnDrop(PointerEventData eventData) 
     {
         InventoryItem inventoryItem = eventData.pointerDrag.GetComponent<InventoryItem>();

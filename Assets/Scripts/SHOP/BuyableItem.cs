@@ -18,17 +18,14 @@ namespace SHOP
 		[SerializeField] Image buyableItemPowerFill; 
 		[SerializeField] TMP_Text buyableItemPriceText; 
 		[SerializeField] Button buyableItemPurchaseButton;
-
+		[SerializeField] Button buyableItemSoldButton;
+		
 		[Space (20f)]
 		[SerializeField] Button itemButton;
 		[SerializeField] Image itemImage;
 		[SerializeField] Outline itemOutline;
 
-		private void Start()
-		{
-			throw new NotImplementedException();
-		}
-
+		
 		public void SetItemPosition (Vector2 pos)
 		{
 			GetComponent <RectTransform> ().anchoredPosition += pos;
@@ -57,6 +54,9 @@ namespace SHOP
 		public void SetItemAsPurchased ()
 		{
 			buyableItemPurchaseButton.gameObject.SetActive (false);
+			itemOutline.enabled = false;
+			buyableItemSoldButton.gameObject.SetActive (true);
+
 			itemButton.interactable = true;
 
 			itemImage.color = itemNotSelectedColor;
@@ -66,30 +66,6 @@ namespace SHOP
 		{
 			buyableItemPurchaseButton.onClick.RemoveAllListeners ();
 			buyableItemPurchaseButton.onClick.AddListener (() => action.Invoke (itemIndex));
-		}
-
-		public void OnItemSelect (int itemIndex, UnityAction<int> action)
-		{
-			itemButton.interactable = true;
-
-			itemButton.onClick.RemoveAllListeners ();
-			itemButton.onClick.AddListener (() => action.Invoke (itemIndex));
-		}
-		
-		
-
-		public void SelectItem ()
-		{
-			itemOutline.enabled = true;
-			itemImage.color = itemSelectedColor;
-			itemButton.interactable = false;
-		}
-
-		public void DeselectItem ()
-		{
-			itemOutline.enabled = false;
-			itemImage.color = itemNotSelectedColor;
-			itemButton.interactable = true;
 		}
 	}
 }
