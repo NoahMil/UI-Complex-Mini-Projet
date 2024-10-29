@@ -16,4 +16,4 @@ MonoBehaviour:
   image: {fileID: 21300000, guid: 1adee6a1ab667ac4ebee77e956341cfc, type: 3}
   power: 5
   price: 2000
-  isPurchased: 1
+  isPurchased: 0

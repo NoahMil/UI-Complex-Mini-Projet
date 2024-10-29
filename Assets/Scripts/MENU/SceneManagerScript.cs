@@ -7,7 +7,8 @@ namespace MENU
     public class SceneManagerScript : MonoBehaviour
     {
         [SerializeField] private AudioClip meowSoundClip;
-        
+        [SerializeField] private ShopManager _shopManager;
+
         public void QuitGame()
         {
 #if UNITY_EDITOR
@@ -22,6 +23,7 @@ namespace MENU
         {
             GameDataManager.AddCoins(500);
             GameSharedUI.instance.UpdateCoinsUIText();
+            _shopManager.UpdateShopItems();
             SoundFXManager.instance.PlaySoundFXClip(meowSoundClip, transform, 1f);
         }
     }

@@ -68,6 +68,11 @@ namespace SHOP
 		{
 			buyableItemPriceText.color = Color.red;
 		}
+		
+		public void SetItemAsBuyable()
+		{
+			buyableItemPriceText.color = Color.white;
+		}
 
 		public void OnItemPurchase (int itemIndex, UnityAction<int> action)
 		{

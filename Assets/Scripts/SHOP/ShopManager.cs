@@ -17,7 +17,7 @@ namespace SHOP
             
         }
         
-        void UpdateShopItems()
+        public void UpdateShopItems()
         {
             for (int i = 0; i < buyableItems.Length; i++)
             {
@@ -29,6 +29,11 @@ namespace SHOP
                     if (item.price > GameDataManager.GetCoins())
                     {
                         buyableItem.SetItemAsTooExpensive();
+                    }
+                    
+                    if (item.price <= GameDataManager.GetCoins())
+                    {
+                        buyableItem.SetItemAsBuyable();
                     }
 
                     buyableItem.SetItemName(item.name);
