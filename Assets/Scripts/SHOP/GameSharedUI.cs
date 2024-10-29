@@ -24,7 +24,7 @@ namespace SHOP
 
         private void Start()
         {
-            GameDataManager.AddCoins(20000);
+            GameDataManager.AddCoins(5000);
             UpdateCoinsUIText();
         }
 
