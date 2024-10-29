@@ -57,7 +57,6 @@ namespace SHOP
                 inventoryManager.AddItem(itemsToPickUp[index]);
                 buyableItem.SetItemAsPurchased();
                 
-                Debug.Log("BUY");
 
             } else {
                 Debug.Log("Not enough coins..");

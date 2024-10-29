@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using INVENTORY;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
