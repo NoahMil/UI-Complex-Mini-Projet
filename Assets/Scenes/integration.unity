@@ -770,6 +770,10 @@ PrefabInstance:
       propertyPath: _characterEquipmentManage
       value: 
       objectReference: {fileID: 175926699}
+    - target: {fileID: 1172592698732382290, guid: dd213d8849b984f4a9e470b04d0a7d0d, type: 3}
+      propertyPath: _characterEquipmentManager
+      value: 
+      objectReference: {fileID: 175926699}
     - target: {fileID: 3842177927741494630, guid: dd213d8849b984f4a9e470b04d0a7d0d, type: 3}
       propertyPath: m_Name
       value: headbandSlot
@@ -2352,6 +2356,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1172592698732382290, guid: dd213d8849b984f4a9e470b04d0a7d0d, type: 3}
       propertyPath: _characterEquipmentManage
+      value: 
+      objectReference: {fileID: 175926699}
+    - target: {fileID: 1172592698732382290, guid: dd213d8849b984f4a9e470b04d0a7d0d, type: 3}
+      propertyPath: _characterEquipmentManager
       value: 
       objectReference: {fileID: 175926699}
     - target: {fileID: 3842177927741494630, guid: dd213d8849b984f4a9e470b04d0a7d0d, type: 3}
@@ -5483,6 +5491,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1172592698732382290, guid: dd213d8849b984f4a9e470b04d0a7d0d, type: 3}
       propertyPath: _characterEquipmentManage
+      value: 
+      objectReference: {fileID: 175926699}
+    - target: {fileID: 1172592698732382290, guid: dd213d8849b984f4a9e470b04d0a7d0d, type: 3}
+      propertyPath: _characterEquipmentManager
       value: 
       objectReference: {fileID: 175926699}
     - target: {fileID: 3842177927741494630, guid: dd213d8849b984f4a9e470b04d0a7d0d, type: 3}
@@ -9536,6 +9548,10 @@ PrefabInstance:
       propertyPath: _characterEquipmentManage
       value: 
       objectReference: {fileID: 175926699}
+    - target: {fileID: 1172592698732382290, guid: dd213d8849b984f4a9e470b04d0a7d0d, type: 3}
+      propertyPath: _characterEquipmentManager
+      value: 
+      objectReference: {fileID: 175926699}
     - target: {fileID: 3842177927741494630, guid: dd213d8849b984f4a9e470b04d0a7d0d, type: 3}
       propertyPath: m_Name
       value: scarfSlot
@@ -11734,6 +11750,10 @@ PrefabInstance:
       propertyPath: _characterEquipmentManage
       value: 
       objectReference: {fileID: 175926699}
+    - target: {fileID: 1172592698732382290, guid: dd213d8849b984f4a9e470b04d0a7d0d, type: 3}
+      propertyPath: _characterEquipmentManager
+      value: 
+      objectReference: {fileID: 175926699}
     - target: {fileID: 3842177927741494630, guid: dd213d8849b984f4a9e470b04d0a7d0d, type: 3}
       propertyPath: m_Name
       value: cloakSlot
@@ -12761,6 +12781,10 @@ PrefabInstance:
       objectReference: {fileID: 1694319457}
     - target: {fileID: 1172592698732382290, guid: dd213d8849b984f4a9e470b04d0a7d0d, type: 3}
       propertyPath: _characterEquipmentManage
+      value: 
+      objectReference: {fileID: 175926699}
+    - target: {fileID: 1172592698732382290, guid: dd213d8849b984f4a9e470b04d0a7d0d, type: 3}
+      propertyPath: _characterEquipmentManager
       value: 
       objectReference: {fileID: 175926699}
     - target: {fileID: 3842177927741494630, guid: dd213d8849b984f4a9e470b04d0a7d0d, type: 3}

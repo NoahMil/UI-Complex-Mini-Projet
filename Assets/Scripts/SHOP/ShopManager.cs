@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace SHOP
@@ -12,9 +13,10 @@ namespace SHOP
 
         void Start()
         {
-            UpdateShopItems();
+            Invoke(nameof(UpdateShopItems), 1f);
+            
         }
-
+        
         void UpdateShopItems()
         {
             for (int i = 0; i < buyableItems.Length; i++)
@@ -24,10 +26,15 @@ namespace SHOP
                     Item item = shopDataBase.GetItem(i);
                     BuyableItem buyableItem = buyableItems[i];
 
-                    buyableItem.SetCharacterName(item.name);
-                    buyableItem.SetCharacterImage(item.image);
-                    buyableItem.SetCharacterPower(item.power);
-                    buyableItem.SetCharacterPrice(item.price);
+                    if (item.price > GameDataManager.GetCoins())
+                    {
+                        buyableItem.SetItemAsTooExpensive();
+                    }
+
+                    buyableItem.SetItemName(item.name);
+                    buyableItem.SetItemImage(item.image);
+                    buyableItem.SetItemPower(item.power);
+                    buyableItem.SetItemPrice(item.price);
 
                     if (item.isPurchased)
                     {
@@ -56,10 +63,7 @@ namespace SHOP
                 shopDataBase.PurchaseItem (index);
                 inventoryManager.AddItem(itemsToPickUp[index]);
                 buyableItem.SetItemAsPurchased();
-                
-
-            } else {
-                Debug.Log("Not enough coins..");
+                UpdateShopItems();
             }
         }
         

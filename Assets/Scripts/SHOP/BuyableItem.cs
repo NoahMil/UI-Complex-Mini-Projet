@@ -31,22 +31,24 @@ namespace SHOP
 			GetComponent <RectTransform> ().anchoredPosition += pos;
 		}
 
-		public void SetCharacterImage (Sprite sprite)
+
+
+		public void SetItemImage (Sprite sprite)
 		{
 			buyableItemImage.sprite = sprite;
 		}
 
-		public void SetCharacterName (string name)
+		public void SetItemName (string name)
 		{
 			buyableItemNameText.text = name;
 		}
 		
-		public void SetCharacterPower (float power)
+		public void SetItemPower (float power)
 		{
 			buyableItemPowerFill.fillAmount = power / 10;
 		}
 
-		public void SetCharacterPrice (int price)
+		public void SetItemPrice (int price)
 		{
 			buyableItemPriceText.text = price.ToString ();
 		}
@@ -60,6 +62,11 @@ namespace SHOP
 			itemButton.interactable = true;
 
 			itemImage.color = itemNotSelectedColor;
+		}
+
+		public void SetItemAsTooExpensive()
+		{
+			buyableItemPriceText.color = Color.red;
 		}
 
 		public void OnItemPurchase (int itemIndex, UnityAction<int> action)
