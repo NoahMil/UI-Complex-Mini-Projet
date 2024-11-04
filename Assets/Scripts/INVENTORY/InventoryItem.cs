@@ -10,32 +10,42 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     [HideInInspector] public Item item;
     [HideInInspector] public Transform parentAfterDrag;
     private CanvasGroup _canvasGroup;
+    private Canvas _canvas;
+
+    private void Awake()
+    {
+        _canvas = GetComponentInParent<Canvas>();
+        _canvasGroup = GetComponent<CanvasGroup>();
+    }
 
     public void InitializeItem(Item newItem)
     {
         item = newItem;
         image.sprite = newItem.image;
-        _canvasGroup = GetComponent<CanvasGroup>();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-   //     image.raycastTarget = false;
         _canvasGroup.blocksRaycasts = false;
         parentAfterDrag = transform.parent;
-        transform.SetParent(transform.root); 
+        transform.SetParent(transform.root);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        transform.position = Input.mousePosition;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            _canvas.transform as RectTransform, 
+            Input.mousePosition, 
+            _canvas.worldCamera, 
+            out var localPoint
+        );
+        
+        transform.localPosition = localPoint; 
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-//        image.raycastTarget = true;
         _canvasGroup.blocksRaycasts = true;
-
 
         if (transform.parent == transform.root)
         {
